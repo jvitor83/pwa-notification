@@ -1,9 +1,10 @@
 
 self.addEventListener("push", function (event) {
     console.log('[Service Worker] Push Received.');
-    console.log(`[Service Worker] Push had this data:`, event.data);
 
     var data = event.data.json();
+    console.log(`[Service Worker] Push had this data:`, data);
+
     var title = data.title;
     var options = {
         body: data.body,
