@@ -6,11 +6,7 @@ self.addEventListener("push", function (event) {
     console.log(`[Service Worker] Push had this data:`, data);
 
     var title = data.title;
-    var options = {
-        body: data.body,
-        icon: data.icon,
-        tag: data.tag
-    }
+    var options = data.options;
     const notificationPromise = self.registration.showNotification(title, options);
     event.waitUntil(notificationPromise);
 });
